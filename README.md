@@ -79,6 +79,15 @@ The prompt function is also overridable so you can change this to look however y
 ## Examples
 
 ### __CLEcho__
+
+This class demonstrates inheriting from CLProgram and overriding it's run function to run a simple program.
+
+Things to note:
+When overriding CLProgram::run, the program will immediately exit to the last CLProgram and not pause
+if CLProgram::prompt is not called at the end of the function
+
+CLFunction may be a better option if the code you are wrapping is rather simple
+
 ```
 ----[[ Echo ]]----
 This program echos to the console the text that you type!
@@ -98,15 +107,8 @@ And another
 
 ### __CLFunction__
 
-This class demonstrates inheriting from CLProgram and overriding it's run function to run a simple program.
-
-Things to note:
-When overriding CLProgram::run, the program will immediately exit to the last CLProgram and not pause
-if CLProgram::prompt is not called at the end of the function
-
-CLFunction may be a better option if the code you are wrapping is rather simple
-
-<br>
+This class demonstrates a CLProgram which wraps a function
+allowing any function to be added as an option in a CLProgram menu
 
 Here we wrap this simple add function:
 ``` C++
