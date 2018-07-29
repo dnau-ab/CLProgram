@@ -12,7 +12,7 @@ CLProgram is simply a wrapper class for organizing tools, tests, examples which 
 // inherit from CLProgram
 class CLDerived : public CLProgram {
 public:
-    CLDerived() : CLProgram("My Program") {
+    CLDerived() : CLProgram("Derived Program") {
         // ...
     }
 
@@ -26,8 +26,8 @@ public:
 int main() {
 
     // create and add subprograms to program
-    CLProgram* subprogram = new CLProgram("Derived Program", "Description");
-    subprogram->addSubprogram(new CLDerived());
+    CLProgram* submenu = new CLProgram("My Programs", "Description");
+    submenu->addSubprogram(new CLDerived());
 
     // add subprograms to root program
     CLProgram* root = new CLProgram("Main Menu");
@@ -67,6 +67,7 @@ This is an example
 Selecting option [b] results in:
 ```
 ----[[ My Programs ]]----
+Description
 [a]     Derived Program
 [<]     Exit My Programs
 
